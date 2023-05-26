@@ -17,7 +17,7 @@ root_dir = './data/scannet/processed_scannet/SCENE_ID'
 bbox_dir =  './data/scannet/processed_scannet/SCENE_ID'
 scans_dir = './data/scannet/scans'
 annotation_file_path = './data/scannet/scan2cad/full_annotations.json'
-label_map_file = './data_preparation/scannet_preprocess/meta_data/scannetv2-labels.combined.tsv'
+label_map_file = './data/scannet/processed_scannet/meta_data/scannetv2-labels.combined.tsv'
 
 ## FINV parameters
 if dataset == 'nuscenes':
@@ -35,7 +35,7 @@ elif dataset == 'shapenet':
 else:
     assert False
 
-gan = 'get3d'
+gan = 'eg3d'
 directional_loss = False
 clip_loss = False
 only_texture = False

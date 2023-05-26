@@ -264,7 +264,7 @@ class ImageFolderDataset(Dataset):
                 continue
 
             for entry in transforms['frames']:
-                image_names.append(os.path.basename(folder)[:5] + '_' + entry['file_path'])
+                image_names.append(os.path.basename(folder) + '_' + entry['file_path'])
 
                 camera_param = entry['transform_matrix']
                 intrinsics = convert_intrinsic_toeg3d(fovyangle_y=transforms['camera_angle_x'] * 180 / np.pi, ratio=1)
@@ -276,11 +276,9 @@ class ImageFolderDataset(Dataset):
                         dtype=torch.float32,
                     ).numpy()
                     assert rot.shape == (4,4)
-                    # rot = pyrr.matrix44.create_from_axis_rotation([1,0,0], np.pi)
-                    # input_poses = rot @ np.linalg.inv(input_poses.reshape(-1, 4,4))
                     if global_config.gan == 'get3d':
                         input_poses = np.linalg.inv(rot @ input_poses)
-                    else:
+                    else: # eg3d
                         input_poses = rot @ input_poses
 
                 camera_param = np.concatenate([input_poses.reshape(-1), intrinsics.reshape(-1)]).astype(np.float32)
@@ -297,8 +295,6 @@ class ImageFolderDataset(Dataset):
             # rgb_list = [n for n in rgb_list if n.endswith('.png') or n.endswith('.jpg')]
             # rgb_file_name_list = [os.path.join(folder, n) for n in rgb_list]
             yield image_names, target_images, camera_params, instance_masks
-
-        
 
     @staticmethod
     def _file_ext(fname):

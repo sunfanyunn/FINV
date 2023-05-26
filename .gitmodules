@@ -1,6 +1,6 @@
 [submodule "eg3d"]
 	path = eg3d
-	url = https://github.com/NVlabs/eg3d.git
+	url = https://github.com/sunfanyunn/eg3d.git
 [submodule "get3d"]
 	path = get3d
 	url = https://github.com/sunfanyunn/GET3D.git

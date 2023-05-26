@@ -10,7 +10,7 @@ from configs import global_config
 
 def load_eg3d(data_camera_mode='shapenet_chair', reload_modules=True):
     import sys
-    sys.path.append('./eg3d/')
+    sys.path.append('./eg3d/eg3d')
     import legacy
     import dnnlib
 
@@ -46,7 +46,7 @@ def load_eg3d(data_camera_mode='shapenet_chair', reload_modules=True):
 
 def load_vgg():
     import sys
-    sys.path.append('./eg3d')
+    sys.path.append('./eg3d/eg3d')
     url = 'https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metrics/vgg16.pt'
     import dnnlib
     with dnnlib.util.open_url(url) as f:
