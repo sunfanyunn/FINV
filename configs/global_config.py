@@ -4,13 +4,13 @@ device = 'cuda:0'
 ## Data
 dataset = 'scannet'
 dataset = 'shapenet'
-# sampling frequency
-freq = 50
 # 5 chair, 7 table, and 8 car
 target_instance_type = 5
 ## Dirs for output files
 embedding_base_dir = './output'
 DEBUG = False
+# sampling frequency for scannet
+freq = 50
 
 ## Paths
 root_dir = './data/scannet/processed_scannet/SCENE_ID'

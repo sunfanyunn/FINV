@@ -233,14 +233,10 @@ class BaseCoach:
             new_target_pose = new_target_pose.to(global_config.device)
             new_target_pose.requires_grad = False
             # new_target_pose = target_pose
+            # new_generated_images, _ = new_G.my_forward(w_batch, new_target_pose[:, :16].reshape(-1, 1, 4, 4))
             new_generated_images, _ = new_G.my_forward(w_batch, new_target_pose[:, :16].reshape(-1, 1, 4, 4))
             new_generated_images = mask_out(new_generated_images[:, :3, ...],
                                             new_generated_images[:, 3:, ...])
-
-            # _new_generated_images = ((new_generated_images + 1) * 255/2).clamp(0, 255.).permute(0, 2, 3, 1).to(torch.uint8).cpu().numpy()
-            # from PIL import Image
-            # Image.fromarray(_new_generated_images[0, ...]).save('tmp.png')
-            # import pdb;pdb.set_trace()
 
             new_generated_images = preprocess((new_generated_images.clamp(-1, 1) + 1) / 2)
             real_images = preprocess((real_images.clamp(-1, 1) + 1) /2)
@@ -254,20 +250,6 @@ class BaseCoach:
         return loss, l2_loss_val, loss_lpips
 
     def forward(self, w, target_pose, target_size=512):
-        # if os.path.basename(global_config.input_pose_path).split(".")[1] == "json":
-            # f = open(global_config.input_pose_path)
-            # target_pose = np.asarray(json.load(f)[global_config.input_id]['pose']).astype(np.float32)
-            # f.close()
-            # o = target_pose[0:3, 3]
-            # o = 2.7 * o / np.linalg.norm(o)
-            # target_pose[0:3, 3] = o
-            # target_pose = np.reshape(target_pose, -1)
-        # else:
-            # target_pose = np.load(global_config.input_pose_path).astype(np.float32)
-            # target_pose = np.reshape(target_pose, -1)
-
-        # intrinsics = np.asarray([4.2647, 0.0, 0.5, 0.0, 4.2647, 0.5, 0.0, 0.0, 1.0]).astype(np.float32)
-
         if self.gan_type == 'eg3d':
             batch_size = target_pose.shape[0]
             if target_pose.shape[-1] == 25:
@@ -281,12 +263,12 @@ class BaseCoach:
             w = w.repeat((batch_size, 1, 1))
             generated_images = self.G.synthesis(w, target_pose, noise_mode='const', force_fp32=True)['image']
             return generated_images, None
-
         elif self.gan_type == 'get3d':
             batchsize = target_pose.shape[0]
-            w = w.repeat([batchsize, 1, 1])
+            # w = w.repeat([batchsize, 1, 1])
             camera = target_pose[:, :16].reshape((batchsize, 1, 4, 4)).to(global_config.device)
-            images, gen_camera = self.G.my_forward(w, camera)
+            images, gen_camera = self.G.forward(w.squeeze(0), camera)
+            images = images.unsqueeze(0)
             return images, gen_camera
         else:
             assert False
