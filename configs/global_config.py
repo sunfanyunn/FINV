@@ -8,7 +8,7 @@ dataset = 'shapenet'
 target_instance_type = 5
 ## Dirs for output files
 embedding_base_dir = './output'
-DEBUG = False
+DEBUG = True
 # sampling frequency for scannet
 freq = 50
 
@@ -35,7 +35,7 @@ elif dataset == 'shapenet':
 else:
     assert False
 
-gan = 'eg3d'
+gan = 'get3d'
 directional_loss = False
 clip_loss = False
 only_texture = False

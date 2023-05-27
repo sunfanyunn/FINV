@@ -1,5 +1,5 @@
-import abc
 import os
+import abc
 import pickle
 from argparse import Namespace
 import wandb
@@ -267,8 +267,9 @@ class BaseCoach:
             batchsize = target_pose.shape[0]
             # w = w.repeat([batchsize, 1, 1])
             camera = target_pose[:, :16].reshape((batchsize, 1, 4, 4)).to(global_config.device)
-            images, gen_camera = self.G.forward(w.squeeze(0), camera)
-            images = images.unsqueeze(0)
+            # images, gen_camera = self.G.forward(w.squeeze(0), camera)
+            # images = images.unsqueeze(0)
+            images, gen_camera = self.G.forward(w, camera)
             return images, gen_camera
         else:
             assert False
