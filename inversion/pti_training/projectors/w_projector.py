@@ -387,9 +387,9 @@ def project_get3d(
         ws = (w_opt_ + w_noise) #.repeat([1, G.backbone.mapping.num_ws, 1])
         all_w_opt.append(w_opt_.detach())
 
-        # synth_images_orig, _ = G.my_forward(ws, camera)
-        synth_images_orig, _ = G.forward(ws.squeeze(0), camera)
-        synth_images_orig = synth_images_orig.unsqueeze(0)
+        synth_images_orig, _ = G.my_forward(ws, camera)
+        # synth_images_orig, _ = G.forward(ws.squeeze(0), camera)
+        # synth_images_orig = synth_images_orig.unsqueeze(0)
         synth_images_orig, synth_masks_orig = synth_images_orig[:, :3, ...], synth_images_orig[:, 3:, ...]
         # Features for synth images.
         # synth_features = vgg16(resized_mask*resized_synth_images, resize_images=False, return_lpips=True)

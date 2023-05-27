@@ -35,7 +35,7 @@ elif dataset == 'shapenet':
 else:
     assert False
 
-gan = 'eg3d'
+gan = 'get3d'
 directional_loss = False
 clip_loss = False
 only_texture = False

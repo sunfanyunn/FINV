@@ -199,9 +199,9 @@ class SingleIDCoach(BaseCoach):
             # len: 24
             camera_list = self.G.synthesis.generate_rotate_camera_list(n_batch=1)
             for i_camera, camera in tqdm(enumerate(camera_list)):
-                # img, _ = self.G.my_forward(ws, camera)
-                img, _ = self.G.forward(ws.squeeze(0), camera)
-                img = img.unsqueeze(0)
+                img, _ = self.G.my_forward(ws, camera)
+                # img, _ = self.G.forward(ws.squeeze(0), camera)
+                # img = img.unsqueeze(0)
                 img, mask = img[0, :3, :], img[0, 3:, :].repeat([3,1,1])
                 img = img * mask + (1. - mask)
                 img = (img.permute(1,2,0) * 127.5 + 128).clamp(0, 255.).to(torch.uint8)
