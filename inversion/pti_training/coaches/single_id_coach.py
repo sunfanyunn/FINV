@@ -228,7 +228,7 @@ class SingleIDCoach(BaseCoach):
             # generated_images, _ = self.forward(ws, camera_params)
             generated_images = []
             for j in range(camera_params.shape[0]):
-                generated_image, _ = self.my_forward(ws, camera_params[j:j+1])
+                generated_image, _ = self.forward(ws, camera_params[j:j+1])
                 generated_images.append(generated_image[0])
             generated_images = torch.stack(generated_images)
 

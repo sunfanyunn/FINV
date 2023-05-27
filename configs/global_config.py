@@ -8,7 +8,7 @@ dataset = 'shapenet'
 target_instance_type = 5
 ## Dirs for output files
 embedding_base_dir = './output'
-DEBUG = True
+DEBUG = False
 # sampling frequency for scannet
 freq = 50
 
