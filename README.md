@@ -1,6 +1,6 @@
 # Partial-View Object View Synthesis via Filtering Inversion
 
-[Fan-Yun Sun](https://sunfanyun.com/), [Jonathan Tremblay](https://research.nvidia.com/person/jonathan-tremblay), Valts Blukis, Kevin Lin, Danfei Xu, Boris Ivanovic, Peter Karkus, Stan Birchfield, Dieter Fox, Ruohan Zhang, Yunzhu Li, Jiajun Wu, Marco Pavone, Nick Haber
+[Fan-Yun Sun](https://sunfanyun.com/), [Jonathan Tremblay](https://research.nvidia.com/person/jonathan-tremblay), [Valts Blukis](https://www.cs.cornell.edu/~valts/), Kevin Lin, Danfei Xu, Boris Ivanovic, Peter Karkus, Stan Birchfield, Dieter Fox, Ruohan Zhang, Yunzhu Li, Jiajun Wu, Marco Pavone, Nick Haber
 
 [Project Page](https://cs.stanford.edu/~sunfanyun/finv/)
 
@@ -16,6 +16,10 @@ Run `prepare_data.sh`. The resulting directory structure should look like:
 |   |-- gt_object_mesh/
 ```
 
+## Run
+refer to `go.sh`
+
+
 ## Broader Information
 
 FINV builds upon several previous works:
@@ -24,13 +28,8 @@ FINV builds upon several previous works:
 - [Efficient Geometry-aware 3D Generative Adversarial Networks](https://github.com/NVlabs/eg3d)
 - [GET3D: A Generative Model of High Quality 3D Textured Shapes Learned from Images](https://github.com/nv-tlabs/GET3D)
 
-## Run
-
-refer to `go.sh`
-
 
 ## Citation
-
 ```latex
 @article{sun2023partial,
   title={Partial-View Object View Synthesis via Filtered Inversion},
