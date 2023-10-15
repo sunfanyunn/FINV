@@ -1,4 +1,4 @@
-# Partial-View Object View Synthesis via Filtering Inversion
+# Partial-View Object View Synthesis via Filtering Inversion<br><sub>Official implementation of the 3DV 2024 paper</sub>
 
 [Fan-Yun Sun](https://sunfanyun.com/), [Jonathan Tremblay](https://research.nvidia.com/person/jonathan-tremblay), [Valts Blukis](https://www.cs.cornell.edu/~valts/), Kevin Lin, Danfei Xu, Boris Ivanovic, Peter Karkus, Stan Birchfield, Dieter Fox, Ruohan Zhang, Yunzhu Li, Jiajun Wu, Marco Pavone, Nick Haber
 
@@ -19,6 +19,8 @@ Run `prepare_data.sh`. The resulting directory structure should look like:
 ## Run
 refer to `go.sh`
 
+## TODO
+- parallelize the inversion process
 
 ## Broader Information
 
@@ -34,8 +36,8 @@ FINV builds upon several previous works:
 @article{sun2023partial,
   title={Partial-View Object View Synthesis via Filtered Inversion},
   author={Sun, Fan-Yun and Tremblay, Jonathan and Blukis, Valts and Lin, Kevin and Xu, Danfei and Ivanovic, Boris and Karkus, Peter and Birchfield, Stan and Fox, Dieter and Zhang, Ruohan and others},
-  journal={arXiv preprint arXiv:2304.00673},
-  year={2023}
+  journal={International Conference on 3D Vision (3DV)},
+  year={2024}
 }
 `````
 
