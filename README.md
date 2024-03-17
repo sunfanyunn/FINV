@@ -1,8 +1,9 @@
-# Partial-View Object View Synthesis via Filtering Inversion<br><sub>Official implementation of the 3DV 2024 paper</sub>
+# Partial-View Object View Synthesis via Filtering Inversion<br><sub>Official pytorch implementation</sub>
 
 [Fan-Yun Sun](https://sunfanyun.com/), [Jonathan Tremblay](https://research.nvidia.com/person/jonathan-tremblay), [Valts Blukis](https://www.cs.cornell.edu/~valts/), [Kevin Lin](https://kevin-thankyou-lin.github.io/), [Danfei Xu](https://faculty.cc.gatech.edu/~danfei/), [Boris Ivanovic](https://www.borisivanovic.com/), [Peter Karkus](http://karkus.tilda.ws/), [Stan Birchfield](https://cecas.clemson.edu/~stb/), [Dieter Fox](https://homes.cs.washington.edu/~fox/), [Ruohan Zhang](https://ai.stanford.edu/~zharu/), [Yunzhu Li](https://yunzhuli.github.io/), [Jiajun Wu](https://jiajunwu.com/), [Marco Pavone](https://research.nvidia.com/person/marco-pavone), [Nick Haber](https://ed.stanford.edu/faculty/nhaber)
 
-- [Project Page](https://cs.stanford.edu/~sunfanyun/finv/)
+<br>
+**[Project Page](https://cs.stanford.edu/~sunfanyun/finv/)
 
 ## Data Preparation
 Run `prepare_data.sh`. The resulting directory structure should look like:
