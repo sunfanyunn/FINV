@@ -18,13 +18,14 @@ $ pip install -r requirements.txt
 ```
 2. dataset preparation (see below)
 
-3. refer to the sample command in `go.sh`
+3. refer to the sample command below:
 ```
-$ ./go.sh
+# Scannet
+python main.py scene_id=scene0038_00
 ```
 
 ## Data Preparation
-Run `prepare_data.sh`. The resulting directory structure should look like:
+Run `prepare_data.sh`. The resulting directory should have the following file structure:
 
 ```
 |-- data/
@@ -40,7 +41,6 @@ Run `prepare_data.sh`. The resulting directory structure should look like:
 
 ## Broader Information
 FINV builds upon several previous works:
-
 - [PTI: Pivotal Tuning for Latent-based editing of Real Images](https://github.com/danielroich/PTI)
 - [Efficient Geometry-aware 3D Generative Adversarial Networks](https://github.com/NVlabs/eg3d)
 - [GET3D: A Generative Model of High Quality 3D Textured Shapes Learned from Images](https://github.com/nv-tlabs/GET3D)
